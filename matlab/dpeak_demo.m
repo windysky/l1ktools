@@ -1,4 +1,4 @@
-% Demo of scripts
+% DPEAK_DEMO Demo of peak detection.
 
 lxbfile = '../data/A10.lxb';
 outfolder = '../data/';
@@ -11,5 +11,5 @@ outfolder = '../data/';
 
 % detect peaks and save stats to a file
 fprintf('Detecting peaks...\n');
-[pkstats, raw] = dpeak(lxbfile, 'out', outfolder, 'showfig', true);
+[pkstats, raw] = l1kt_dpeak(lxbfile, 'out', outfolder, 'showfig', true);
 fprintf('Done\n')

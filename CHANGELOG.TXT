@@ -1,1 +1,18 @@
-2011-Dec-31 Initial Release
+2012-Feb-29: Updates
+New tools:
+    Normalization routines
+	l1kt_liss.m: Apply L1000 invariant set scaling
+	l1kt_qnorm.m: Perform quantile normalization
+    Inference
+	l1kt_infer.m: Apply inference model to a set of normalized landmark profiles.
+Renamed 3 tools:
+	dpeak -> l1kt_dpeak
+	parse_lxb -> l1kt_parse_lxb
+	plot_peaks -> l1kt_plot_peaks
+Additions to the data folder:
+	epsilon_cal.gmx : list of invariant genesets used for normalization.
+	log_ybio_epsilon.gct : Affymetrix reference values for invariant genesets
+	HG_U133A.chip : Probeset to gene mappings
+
+2011-Dec-31: Initial Release
+
