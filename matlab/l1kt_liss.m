@@ -27,6 +27,14 @@ raw.mat = safe_log2(raw.mat);
 calibds = gen_calib_matrix(args.gmx_cal, raw);
 ref = parse_gct(args.ref, 'class', 'double');
 normds = liss(raw, calibds, ref.mat);
+
+% drop the control beads from the data set
+calnames = cellfun(@(x) ['CAL' sprintf('%0.2d', x)], num2cell(1:10)', ...
+    'UniformOutput', false);
+if ~isequal(normds.rid(1:10), calnames)
+    error('The first 10 analytes in the data set should be the calibration beads')
+end
+normds = gctextract_tool(normds, 'rid', normds.rid(11:end));
 mkgct(fullfile(out, 'NORM'), normds)
 
 % generate calibration plots of the unnormalized data
