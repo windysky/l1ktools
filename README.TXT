@@ -71,6 +71,16 @@ RP1: 	<32 bit unsigned integer> Reporter fluorescent intensity,
 	quantifies transcript abundance of the gene interrogated by
 	the bead.
 
+Python Tools: python/
+-------
+Requirements:
+1. Python 2.6 and above (untested under Python 3)
+2. numpy (http://numpy.scipy.org)
+3. pytables (http://www.pytables.org/moin)
+4. blessings (http://pypi.python.org/pypi/blessings)
+
+See the GCT class documentation in python/cmap/io/gct for example usage and methods
+
 Software License
 ----------------
 This program is distributed under the terms of the BSD 2-Clause
