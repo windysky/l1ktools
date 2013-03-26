@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>L1ktools by cmap</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>L1ktools</h1>
+          <h2></h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/cmap/l1ktools/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/cmap/l1ktools/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/cmap/l1ktools" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>L1000 Analysis Tools v1.0</h1>
+
+<hr><p>Copyright 2011,2012,2013 Broad Institute of MIT and Harvard.</p>
+
+<p>A collection of software tools to read and analyze data produced from
+the L1000 project (<a href="http://www.broadinstitute.org/LINCS/">www.broadinstitute.org/LINCS/</a>).</p>
+
+<h1>Analysis Tools</h1>
+
+<hr><p>A brief description of the tools included in this software package is
+given below. The Matlab implementation of the tools is currently the
+most mature. Some basic utilities in R and java are also included. We
+will update the tools as they become available.</p>
+
+<h1>Matlab Tools: matlab/</h1>
+
+<hr><p>Requirements:</p>
+
+<ol>
+<li>Matlab R2009a and above</li>
+<li>Statistics Toolbox</li>
+</ol><p>Tools:</p>
+
+<ol>
+<li>
+<strong>dpeak_demo.m</strong>     Demonstrates basic usage of the scripts. </li>
+<li>
+<strong>l1kt_dpeak.m</strong>     Performs peak deconvolution for all analytes in a single LXB
+        file, and outputs a report of the detected peaks.</li>
+<li>
+<strong>l1kt_plot_peaks.m</strong>    Plots intensity distributions for one or more analytes in 
+        an LXB file.</li>
+<li>
+<strong>l1kt_parse_lxb.m</strong> Reads an LXB file and returns the RID and RP1 values.</li>
+<li>
+<strong>l1kt_liss.m</strong>      Performs Luminex Invariant Set Smoothing on a raw (GEX) input 
+        .gct file</li>
+<li>
+<strong>l1kt_qnorm.m</strong>     Performs quantile normalization on an input .gct file</li>
+<li>
+<strong>l1kt_infer.m</strong>     Infers expression of target genes from expression of landmark 
+        genes in an input .gct file</li>
+</ol><p>See the documentation included with each script for a details on usage
+and input parameters.</p>
+
+<p>Demo:
+To run the demo, start Matlab, change to the folder containing dpeak_demo and
+type dpeak_demo in the Command Window. This will read a sample LXB
+file (A10.lxb), generate a number of intensity distribution plots and create a
+text report of the statistics of the detected peaks (A10_pkstats.txt).</p>
+
+<h1>R Tools: R/</h1>
+
+<hr><p>Requirements:</p>
+
+<ol>
+<li>R versions 2.9 and above</li>
+<li><p>prada package: <a href="http://www.bioconductor.org/packages/devel/bioc/html/prada.html">http://www.bioconductor.org/packages/devel/bioc/html/prada.html</a></p></li>
+<li><p><strong>lxb2txt.R</strong>    Saves values from an LXB file as a tab-delimited text file.</p></li>
+<li><p><strong>lxb2txt.sh</strong>   Bash wrapper to lxb2txt.R </p></li>
+</ol><h1>Java Tools: java/</h1>
+
+<hr><ol>
+<li>
+<strong>lxb-util.jar</strong> Java routine for parsing LXB files (source included).</li>
+</ol><h1>Data format</h1>
+
+<hr><p>Bead-level measurements from each detected well in L1000 assay are
+stored as binary .LXB files. The LXB files conform to the FCS 3.0 data
+file standard, commonly used to store flow cytometry data.  For
+details see: <a href="http://isac-net.org/home.aspx">http://isac-net.org/home.aspx</a></p>
+
+<p>The two main measurement parameters are: </p>
+
+<ol>
+<li><p>RID:      Reporter identifier. Values ranging
+[1-500] specifies the bead color/region. RID=0 refer to events
+that flowcytometer software was unable to classify.</p></li>
+<li><p>RP1:      Reporter fluorescent intensity,
+quantifies transcript abundance of the gene interrogated by
+the bead.</p></li>
+</ol><h1>Python Tools: python/</h1>
+
+<hr><p>Requirements:</p>
+
+<ol>
+<li>Python 2.6 and above (untested under Python 3)</li>
+<li>numpy (<a href="http://numpy.scipy.org">http://numpy.scipy.org</a>)</li>
+<li>pytables (<a href="http://www.pytables.org/moin">http://www.pytables.org/moin</a>)</li>
+<li>blessings (<a href="http://pypi.python.org/pypi/blessings">http://pypi.python.org/pypi/blessings</a>)</li>
+</ol><p>See the GCT class documentation in python/cmap/io/gct for example usage and methods</p>
+
+<h1>Software License</h1>
+
+<hr><p>This program is distributed under the terms of the BSD 2-Clause
+license. You should have received a copy of the license along with
+this program. If not see:
+<a href="http://www.opensource.org/licenses/BSD-2-Clause">http://www.opensource.org/licenses/BSD-2-Clause</a></p>
+        </section>
+
+        <footer>
+          L1ktools is maintained by <a href="https://github.com/cmap">cmap</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
